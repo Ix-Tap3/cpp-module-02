@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/17 14:58:13 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/17 16:22:00 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ bool	Fixed::operator<= (Fixed const &other) {return (this->_rawBits <= other._ra
 bool	Fixed::operator>= (Fixed const &other) {return (this->_rawBits >= other._rawBits);}
 bool	Fixed::operator== (Fixed const &other) {return (this->_rawBits == other._rawBits);}
 bool	Fixed::operator!= (Fixed const &other) {return (this->_rawBits != other._rawBits);}
+int		Fixed::operator+ (Fixed const &other)
+{
+	return ((this->toInt() + other.toInt()) << _fractionalBits);
+}
+int		Fixed::operator- (Fixed const &other) {return (this->_rawBits - other._rawBits);}
+int		Fixed::operator* (Fixed const &other) {return (this->_rawBits * other._rawBits);}
+int		Fixed::operator/ (Fixed const &other) {return (this->_rawBits / other._rawBits);}
 
 // member functions
 float	Fixed::toFloat(void) const {return (static_cast<float>(_rawBits) / (1 << _fractionalBits));}

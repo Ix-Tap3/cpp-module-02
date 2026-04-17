@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:23:20 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/17 14:50:26 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/17 15:06:34 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ public:
 	~Fixed (void);
 
 	Fixed	&operator= (const Fixed &);
+	int		operator+ (const Fixed &);
+	int		operator- (const Fixed &);
+	int		operator* (const Fixed &);
+	int		operator/ (const Fixed &);
 	bool	operator< (const Fixed &);
 	bool	operator> (const Fixed &);
 	bool	operator<= (const Fixed &);
