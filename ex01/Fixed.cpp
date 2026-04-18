@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/17 14:40:19 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/18 15:12:07 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ Fixed::Fixed (void)
 Fixed::Fixed (const Fixed &other)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = other;
+	if (this != &other)
+		*this = other;
 }
 
 Fixed::Fixed (int const n)
