@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/18 17:01:22 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/18 18:03:40 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,25 @@ Fixed	Fixed::operator- (Fixed const &other)
 }
 Fixed	Fixed::operator* (Fixed const &other)
 {
-	Fixed	tmp;
 	float	result;
 
 	result = this->toFloat() * other.toFloat();
-	tmp.setRawBits(static_cast<int>(result) * (1 << _fractionalBits));
 	return (result);
 }
 Fixed	Fixed::operator/ (Fixed const &other)
 {
-	Fixed	tmp;
 	float	result;
 
 	result = this->toFloat() / other.toFloat();
-	tmp.setRawBits(static_cast<int>(result) * (1 << _fractionalBits));
+	return (result);
+}
+
+Fixed	Fixed::operator++ (void)
+{
+	float	result;
+
+	result = this->toFloat() + (1 << _fractionalBits);
+	this->setRawBits(static_cast<int>(result) * (1 << _fractionalBits));
 	return (result);
 }
 
