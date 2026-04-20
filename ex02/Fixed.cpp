@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/20 08:52:23 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 09:49:32 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ std::ostream	&operator<< (std::ostream &out, Fixed const &obj)
 	return (out);
 }
 
-bool	Fixed::operator< (Fixed const &other) {return (this->_rawBits < other._rawBits);}
-bool	Fixed::operator> (Fixed const &other) {return (this->_rawBits > other._rawBits);}
-bool	Fixed::operator<= (Fixed const &other) {return (this->_rawBits <= other._rawBits);}
-bool	Fixed::operator>= (Fixed const &other) {return (this->_rawBits >= other._rawBits);}
-bool	Fixed::operator== (Fixed const &other) {return (this->_rawBits == other._rawBits);}
-bool	Fixed::operator!= (Fixed const &other) {return (this->_rawBits != other._rawBits);}
+bool	Fixed::operator< (Fixed const &other) const {return (this->_rawBits < other._rawBits);}
+bool	Fixed::operator> (Fixed const &other) const {return (this->_rawBits > other._rawBits);}
+bool	Fixed::operator<= (Fixed const &other) const {return (this->_rawBits <= other._rawBits);}
+bool	Fixed::operator>= (Fixed const &other) const {return (this->_rawBits >= other._rawBits);}
+bool	Fixed::operator== (Fixed const &other) const {return (this->_rawBits == other._rawBits);}
+bool	Fixed::operator!= (Fixed const &other) const {return (this->_rawBits != other._rawBits);}
 
 
 /* ************************************************************************* */
@@ -122,4 +122,28 @@ void	Fixed::setRawBits(int const n)
 {
 	// std::cout << "setRawBits member function called" << std::endl;
 	_rawBits = n;
+}
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+Fixed const	&Fixed::min(const Fixed &a, const Fixed &b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}
+Fixed const	&Fixed::max(const Fixed &a, const Fixed &b)
+{
+	if (a > b)
+		return (a);
+	return (b);
 }

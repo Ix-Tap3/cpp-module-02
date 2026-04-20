@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:30:01 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/20 08:54:29 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 09:50:58 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,20 @@ int	main(void)
 		std::cout << "e: " << e << ", --e = " << --e << std::endl;
 		std::cout << "e: " << e << ", e-- = " << e-- << std::endl;
 		std::cout << "e after post-decrement: " << e << std::endl;
+		std::cout << std::endl;
+	}
+	{
+		Fixed		a(42);
+		Fixed		b(21);
+		Fixed const	c(165);
+		Fixed const d(164);
+
+		std::cout << std::endl;
+		std::cout << "Min and Max tests\n" << std::endl;
+		std::cout << "a: " << a << ", b: " << b << ", min: " << Fixed::min(a, b) << std::endl;
+		std::cout << "c: " << c << ", d: " << d << ", min: " << Fixed::min(c, d) << std::endl;
+		std::cout << "a: " << a << ", b: " << b << ", max: " << Fixed::max(a, b) << std::endl;
+		std::cout << "c: " << c << ", d: " << d << ", max: " << Fixed::max(c, d) << std::endl;
 	}
 	
 	return (0);
