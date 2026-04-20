@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:30:01 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/18 17:36:23 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 08:54:29 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,18 @@ int	main(void)
 		std::cout << a << " - " << c << " = " << a - c << std::endl;
 		std::cout << std::endl;
 
+	}
+	{
+		Fixed	e(1);
+
+		std::cout << std::endl;
+		std::cout << "Increment and Decrement operators tests\n" << std::endl;
+		std::cout << "e: " << e << ", ++e = " << ++e << std::endl;
+		std::cout << "e: " << e << ", e++ = " << e++ << std::endl;
+		std::cout << "e after post-increment: " << e << std::endl;
+		std::cout << "e: " << e << ", --e = " << --e << std::endl;
+		std::cout << "e: " << e << ", e-- = " << e-- << std::endl;
+		std::cout << "e after post-decrement: " << e << std::endl;
 	}
 	
 	return (0);

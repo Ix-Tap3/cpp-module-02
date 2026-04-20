@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/18 18:03:40 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 08:52:23 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ Fixed::Fixed (int const n) : _rawBits(n << _fractionalBits) {}
 Fixed::~Fixed (void) {}
 Fixed::Fixed (const Fixed &other)
 {
-	if (*this == other)
+	if (*this != other)
 		*this = other;
 }
 
@@ -83,14 +83,29 @@ Fixed	Fixed::operator/ (Fixed const &other)
 	result = this->toFloat() / other.toFloat();
 	return (result);
 }
-
-Fixed	Fixed::operator++ (void)
+Fixed	&Fixed::operator++ (void)
 {
-	float	result;
+	this->_rawBits += 1;
+	return (*this);
+}
+Fixed	Fixed::operator++ (int)
+{
+	Fixed	tmp(*this);
 
-	result = this->toFloat() + (1 << _fractionalBits);
-	this->setRawBits(static_cast<int>(result) * (1 << _fractionalBits));
-	return (result);
+	this->_rawBits += 1;
+	return (tmp);
+}
+Fixed	&Fixed::operator-- (void)
+{
+	this->_rawBits -= 1;
+	return (*this);
+}
+Fixed	Fixed::operator-- (int)
+{
+	Fixed	tmp(*this);
+
+	this->_rawBits -= 1;
+	return (tmp);
 }
 
 // member functions
