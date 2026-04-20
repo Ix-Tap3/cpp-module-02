@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:30:01 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/20 12:39:30 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 14:22:51 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,17 @@ static std::string	displayBool(bool value)
 int	main(void)
 {
 	Point	a;
-	Point	b(10, 30);
-	Point	c(20, 0);
-	Point	p1(10, 15);
-	Point	p2(30, 15);
+	Point	b(10, 0);
+	Point	c(0, 10);
+	Point	p1(2, 2);
+	Point	p2(10, 10);
+	Point	p3(10, 0);
+	Point	p4(5, 0);
 
-	std::cout << a << std::endl;
 	std::cout << "A: " << a << ", B: " << b << ", C: " << c << std::endl;
 	std::cout << "Is p1" << p1 << " lies inside the ABC triangle ? " << displayBool(bsp(a, b, c, p1)) << std::endl;
 	std::cout << "Is p2" << p2 << " lies inside the ABC triangle ? " << displayBool(bsp(a, b, c, p2)) << std::endl;
+	std::cout << "Is p3" << p3 << " lies inside the ABC triangle ? " << displayBool(bsp(a, b, c, p3)) << std::endl;
+	std::cout << "Is p4" << p4 << " lies inside the ABC triangle ? " << displayBool(bsp(a, b, c, p4)) << std::endl;
 	return (0);
 }

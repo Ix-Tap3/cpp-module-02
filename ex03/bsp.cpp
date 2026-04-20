@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 11:41:41 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/20 12:37:20 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 14:19:20 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ bool	bsp(Point const a, Point const b, Point const c, Point const point)
 	Area1 = area(point, a, b);
 	Area2 = area(point, b, c);
 	Area3 = area(point, a, c);
-
+	if (Area1 == 0 || Area2 == 0 || Area3 == 0)
+		return (false);
 	if (Area == Area1 + Area2 + Area3)
 		return (true);
 	return (false);
