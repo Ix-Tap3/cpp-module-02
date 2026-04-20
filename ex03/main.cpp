@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 17:30:01 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/20 12:32:21 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/04/20 12:39:30 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(void)
 	Point	a;
 	Point	b(10, 30);
 	Point	c(20, 0);
-	Point	p1(10, 30);
+	Point	p1(10, 15);
 	Point	p2(30, 15);
 
 	std::cout << a << std::endl;
