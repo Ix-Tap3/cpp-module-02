@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/20 09:49:32 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/07/01 09:12:16 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ Fixed::Fixed (int const n) : _rawBits(n << _fractionalBits) {}
 Fixed::~Fixed (void) {}
 Fixed::Fixed (const Fixed &other)
 {
-	if (*this != other)
+	if (this != &other)
 		*this = other;
 }
 
 // Operator overloading
 Fixed	&Fixed::operator= (const Fixed &other)
 {
-	// std::cout << "Copy assignement operator called" << std::endl;
+	std::cout << "Copy assignement operator called" << std::endl;
 	if (this != &other)
 		this->_rawBits = other.getRawBits();
-	return *this;
+	return (*this);
 }
 
 std::ostream	&operator<< (std::ostream &out, Fixed const &obj)
