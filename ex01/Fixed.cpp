@@ -6,7 +6,7 @@
 /*   By: pcaplat <pcaplat@42angouleme.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 16:47:27 by pcaplat           #+#    #+#             */
-/*   Updated: 2026/04/18 15:12:07 by pcaplat          ###   ########.fr       */
+/*   Updated: 2026/07/01 08:56:58 by pcaplat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ Fixed	&Fixed::operator= (const Fixed &other)
 	std::cout << "Copy assignement operator called" << std::endl;
 	if (this != &other)
 		this->_rawBits = other.getRawBits();
-	return *this;
+	return (*this);
 }
 
 std::ostream	&operator<<  (std::ostream &out, Fixed const &obj)
